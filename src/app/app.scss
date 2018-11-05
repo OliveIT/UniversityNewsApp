@@ -1,0 +1,102 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.swiper-pagination-bullet {
+    background: $color1;
+    width: 10px;
+    height: 10px;
+}
+
+.menu-inner {
+    // Menu Header
+    ion-toolbar {
+        .contents {
+            width: 100%;
+            text-align: center;
+            .logo {
+                /*width: 100px;
+                margin: 25px 0px;*/
+                height: 150px;
+            }
+        }
+    }
+    .toolbar-background {
+        /*background: linear-gradient(to right, $white);
+        border-color: $color1;*/
+
+        /*background: $sidebar-top-background-color;*/
+        /*border-color: #c8c8c800;
+        background: url(http://getregional.com.au/wp-content/uploads/2016/08/blur.jpg);
+        background-size: cover;*/
+
+        
+        border-color: #c8c8c800;
+        /*background: url(https://ak5.picdn.net/shutterstock/videos/800245/thumb/1.jpg);*/
+        background: url(../assets/imgs/flag.jpg);
+        background-size: cover;
+        filter: blur(5px);
+        /*opacity: 0.4;*/
+    }
+    /* Menu Content */
+    ion-content {
+        /*background: rgba(255, 255, 255, 0.5);*/
+        background: $sidebar-background-color;
+        .scroll-content {
+            margin-top: 180px !important;
+        }
+        .menu-icon {
+            width: 1.6em;
+            border-radius: 50%;
+            /*border: 2px solid $color1;*/
+        }
+        .menu-name {
+            padding-top: 5px;
+            .text {
+                line-height: 1.6;
+            }
+        }
+        .item {
+            height: 30px !important;
+            background: none;
+            color: white;
+            img.menu-icon {
+                filter: invert(100%);
+            }
+        }
+        p {
+            /*color: $color1;*/
+            color: $sidebar-category-color;
+        }
+        hr {
+            display: block;
+            border: 0;
+            /*border-top: 1px solid $color1;*/
+            padding: 0;
+        }
+        ion-icon {
+            font-size: 1.5em;
+            color: $sidebar-icon-color;
+        }
+    }
+}
+
+.toolbar-content-md {
+    order: 4;
+}
+ion-title {
+    text-align: center;
+}
+.searchbar-md {
+    background: #464646;
+}

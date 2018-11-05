@@ -1,0 +1,30 @@
+page-article-details {
+    hr {
+        display: block;
+        border: 0;
+        border-top: 1px solid $color1;
+        padding: 0;
+    }
+    .heading {
+        color: $color1;
+    }
+    .item {
+        ion-thumbnail {
+            img {
+                width: 150px;
+                height: 100px;
+                border-radius: 5px;
+                -webkit-box-shadow: 0px 0px 26px 1px rgba(204, 204, 204, 1);
+                -moz-box-shadow: 0px 0px 26px 1px rgba(204, 204, 204, 1);
+                box-shadow: 0px 0px 26px 1px rgba(204, 204, 204, 1);
+            }
+        }
+    }
+}
+
+.ion-page {
+    ion-card {
+        margin: 0px;
+        width: 100%;
+    }
+}

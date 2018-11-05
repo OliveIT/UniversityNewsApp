@@ -1,0 +1,23 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<!-- NavBar with Menu Button -->
+<ion-navbar color="color1" no-border>
+  <!-- Menu  -->
+  <button color="white" ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+
+  <!-- Page Title  -->
+  <ion-title color="white">{{title}}</ion-title>
+
+  <ion-buttons end>
+    <!-- Search Button  -->
+    <button ion-button icon-only color="white" (tap)="openPage('SearchPage')">
+      <ion-icon name="search"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>

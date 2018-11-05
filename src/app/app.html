@@ -1,0 +1,100 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<!-- Left Side Menu  -->
+<ion-menu [content]="content">
+
+  <!-- Header -->
+  <ion-header>
+    <ion-toolbar>
+      <div class="contents">
+        <img class="logo" src="assets/imgs/orgLogo.svg">
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <!-- End Header  -->
+
+  <!-- Menu Contents -->
+  <ion-content>
+    <ion-list no-lines>
+
+      <!-- Home  -->
+      <ion-item menuClose no-border text-wrap (click)="openPage('HomePage')">
+        <ion-row>
+          <ion-col col-2>
+            <ion-icon color="color1" name="home" style="zoom:1.2;"></ion-icon>
+          </ion-col>
+          <ion-col col-10 class="menu-name"><span ion-text>Home</span></ion-col>
+        </ion-row>
+      </ion-item>
+
+      <!-- Search  -->
+      <ion-item menuClose no-border text-wrap (click)="openPage('SearchPage')">
+        <ion-row>
+          <ion-col col-2>
+            <ion-icon color="color1" name="search" style="zoom:1.2;"></ion-icon>
+          </ion-col>
+          <ion-col col-10 class="menu-name"><span ion-text>Search</span></ion-col>
+        </ion-row>
+      </ion-item>
+      <hr>
+
+      <!-- Categories -->
+      <p padding-left menuClose *ngIf="(categories | async)" (click)="openPage('CategoryPage')">Categories</p>
+
+      <hr *ngIf="(categories | async)">
+
+      <!-- List Of Categories -->
+      <ion-item menuClose no-border text-wrap *ngFor="let category of categories | async;" (click)="gotoArticlePage(category)">
+        <ion-row>
+          <ion-col col-2><img class="menu-icon" [src]="category.image"></ion-col>
+          <ion-col col-10 class="menu-name"><span ion-text>{{category.name}}</span></ion-col>
+        </ion-row>
+      </ion-item>
+
+      <hr *ngIf="(categories | async)">
+
+
+      <!-- Others Options -->
+      <p padding-left>Others</p>
+
+      <hr>
+
+      <!-- Settings -->
+      <!-- <ion-item menuClose no-border text-wrap (click)="openPage('SettingsPage')">
+        <ion-row>
+          <ion-col col-2>
+            <ion-icon color="color1" name="settings" style="zoom:1.2;"></ion-icon>
+          </ion-col>
+          <ion-col col-10 class="menu-name"><span ion-text>Settings</span></ion-col>
+        </ion-row>
+      </ion-item> -->
+
+      <!-- About Us -->
+      <ion-item menuClose no-border text-wrap (click)="openPage('AboutUsPage')">
+        <ion-row>
+          <ion-col col-2>
+            <ion-icon color="color1" name="information-circle" style="zoom:1.2;"></ion-icon>
+          </ion-col>
+          <ion-col col-10 class="menu-name"><span ion-text>About Us</span></ion-col>
+        </ion-row>
+      </ion-item>
+
+      <!-- Contact Us -->
+      <ion-item menuClose no-border text-wrap (click)="openPage('ContactUsPage')">
+        <ion-row>
+          <ion-col col-2>
+            <ion-icon color="color1" name="contacts" style="zoom:1.2;"></ion-icon>
+          </ion-col>
+          <ion-col col-10 class="menu-name"><span ion-text>Contact Us</span></ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

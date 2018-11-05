@@ -1,0 +1,46 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<!-- Contact Page Contents -->
+
+<!-- Header  -->
+<ion-header no-border>
+  <header-one title="Contact Us"></header-one>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Contents  -->
+<ion-content padding>
+
+  <div text-center>
+    <p class="contact-title">CONTACT US</p>
+    <p class="contact-subtitle">You can’t beat a big Hello. Infinum is nailing friendly and helpful with a contact page that is easy to use and easy to read. It asks, ‘What can we help you with?’ and directs users to click on either ‘Join us’ or ‘Hire us’ or email for everything else.</p>
+  </div>
+
+  <!-- Contact Details  -->
+  <div class="contact-header">
+    <div class="address">
+      <p *ngIf="contactInfo.address">
+        <ion-icon name="home"></ion-icon>
+        {{contactInfo.address}}
+      </p>
+      <p *ngIf="contactInfo.email">
+        <ion-icon name="mail"></ion-icon>
+        {{contactInfo.email}}
+      </p>
+      <p *ngIf="contactInfo.phone">
+        <ion-icon name="call"></ion-icon>
+        {{contactInfo.phone}}
+      </p>
+    </div>
+  </div>
+
+  <!-- Company Logo  -->
+  <div class="img">
+    <img class="logo" src="assets/imgs/logo.png">
+  </div>
+</ion-content>
+<!-- End Contents  -->

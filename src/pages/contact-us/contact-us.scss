@@ -1,0 +1,29 @@
+page-contact-us {
+    .contact-title {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 0px;
+        letter-spacing: 8px;
+        color: $color1;
+    }
+    .contact-subtitle {
+        font-size: 14px;
+    }
+    .contact-header {
+        text-align: center;
+        padding-top: 5%;
+        .address {
+            p {
+                font-size: 18px;
+                line-height: 0px;
+            }
+        }
+    }
+    .img {
+        padding-top: 5%;
+        text-align: center;
+        .logo {
+            width: 50%;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<!-- Header  -->
+<ion-header no-border>
+  <header-one title="Settings"></header-one>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Content  -->
+<ion-content padding>
+  <ion-card>
+    <ion-list>
+      <ion-list-header>
+        Support Us
+      </ion-list-header>
+      <button ion-item (click)="rateus()">
+        Rate Us
+      </button>
+      <button ion-item (click)="share()">
+        Share with friends
+      </button>
+      <button ion-item (click)="gotoPrivacyPolicy()">
+        Privacy Policy
+      </button>
+    </ion-list>
+  </ion-card>
+
+  <!-- About App Infos -->
+  <ion-card class="animated fadeIn">
+    <ion-list>
+      <ion-list-header>
+        About The App
+      </ion-list-header>
+      <ion-item text-wrap>
+        <h4>IonicBucket News Version</h4>
+        <p>Version <b>1.0.0</b> | 19th March, 2018</p>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>
+<!-- End Content  -->

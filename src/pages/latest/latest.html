@@ -1,0 +1,61 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<ion-content>
+
+  <!-- Top Feature Slider  -->
+  <ion-slides id="slider" pager="true" zoom="true" loop="true" effect="slide" autoplay="3000" *ngIf="articles && articles.length">
+    <ion-slide *ngFor="let article of articles" (click)="gotoArticleDetailsPage(article)">
+      <ion-card class="myCard">
+        <img [src]="article.image">
+        <div class="myOverlay">
+          <div class="card-subtitle">{{article.title}}</div>
+        </div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- Latest Article News  -->
+  <div text-center *ngIf="articles && articles.length">
+    <h3>Latest News</h3>
+  </div>
+
+  <!-- List Of Latest Articles In Grid View  -->
+  <ion-grid>
+    <ion-row *ngIf="articles && articles.length">
+      <ion-col col-6 *ngFor="let article of articles" (tap)="gotoArticleDetailsPage(article)">
+        <ion-card>
+          <img [src]="article.image">
+
+          <ion-card-content>
+            <ion-row>
+              <ion-icon name="clock" color="color1"></ion-icon>
+              <span> &nbsp; {{article.timestamp | date}}</span>
+            </ion-row>
+            <ion-row>
+              <h4 text-wrap>{{article.title | slice:0:40}}
+                <span *ngIf="article.title.length > 40">...</span>
+              </h4>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- When no articles exist in database then open this section  -->
+  <div class="not-exist" *ngIf="articles.length === 0">
+    <img src="assets/imgs/sad_face.jpg">
+    <h4>Woo! No News Available!</h4>
+    <p>Check Back Later For The Updates</p>
+  </div>
+
+  <!--  Infinite Scroll -->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" distance="10%">
+    <ion-infinite-scroll-content *ngIf="!(done | async)" loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <p class="no-more" *ngIf="done | async">No more articles is exist</p>
+</ion-content>

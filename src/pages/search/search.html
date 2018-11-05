@@ -1,0 +1,42 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<!-- Header  -->
+<ion-header no-border>
+  <header-two title="Search"></header-two>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Cnntents  -->
+<ion-content>
+
+  <!-- Search Input Box  -->
+  <ion-searchbar [(ngModel)]="searchInput" (keydown)="search($event)" animated="true"></ion-searchbar>
+
+  <!-- List of All Categories  -->
+  <ion-slides slidesPerView="2" loop="true" effect="slide" autoplay="4000" class="animated slideInLeft" *ngIf="categories && categories.length > 0">
+    <ion-slide *ngFor="let category of categories">
+      <button ion-button full round color="color1" (tap)="gotoArticlePage(category)">{{category.name}}</button>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- List Of Search Result Articles  -->
+  <ion-list padding-top no-lines *ngIf="articles && articles.length > 0">
+    <ion-item *ngFor="let article of articles" (tap)="gotoArticleDetailsPage(article)">
+      <ion-thumbnail item-start>
+        <img [src]="article.image">
+      </ion-thumbnail>
+      <h2 text-wrap>{{article.title | slice:0:40}}
+        <span *ngIf="article.title.length > 40">...</span>
+      </h2>
+      <p>
+        <ion-icon name="clock" color="color1"></ion-icon>
+        <span> &nbsp; {{article.timestamp | date}}</span>
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<!-- End Contents  -->

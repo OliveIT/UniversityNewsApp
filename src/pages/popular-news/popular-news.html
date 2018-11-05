@@ -1,0 +1,46 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<ion-content>
+
+  <div *ngIf="articles && articles.length">
+
+    <!-- List of Popular News  -->
+    <ion-list no-lines *ngFor="let article of articles" (tap)="openArticle(article)">
+      <ion-item>
+
+        <!-- Feature Image -->
+        <ion-thumbnail item-start>
+          <img [src]="article.image">
+        </ion-thumbnail>
+
+        <!-- Article Title -->
+        <h2 text-wrap>{{article.title | slice:0:40}}
+          <span *ngIf="article.title.length > 40">...</span>
+        </h2>
+
+        <!-- Created Date -->
+        <p>
+          <ion-icon name="clock" color="color1"></ion-icon>
+          <span>  &nbsp; {{ article.timestamp | date}}</span>
+        </p>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- When no articles exist in database then open this section  -->
+  <div class="not-exist" *ngIf="articles.length === 0">
+    <img src="assets/imgs/sad_face.jpg">
+    <h4>Woo! No News Available!</h4>
+    <p>Check Back Later For The Updates</p>
+  </div>
+
+  <!--  Infinite Scroll -->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" distance="10%">
+    <ion-infinite-scroll-content *ngIf="!(done | async)" loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <p class="no-more" *ngIf="done | async">No more articles is exist</p>
+</ion-content>

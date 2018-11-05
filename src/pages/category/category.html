@@ -1,0 +1,43 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<!-- Header  -->
+<ion-header no-border>
+  <header-one title="Categories"></header-one>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Content  -->
+<ion-content class="card-background-page">
+
+  <!-- List of Categories  -->
+  <div class="card-background-page" *ngIf="categories.length > 0 ">
+    <ion-card class="animated fadeInLeft" *ngFor="let category of categories" (tap)="gotoArticlePage(category)">
+      <ion-row>
+
+        <!-- Category Image -->
+        <ion-col col-4>
+          <img [src]="category.image" />
+        </ion-col>
+
+        <!-- Category Name -->
+        <ion-col col-8>
+          <div class="card-title">
+            {{category.name}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+
+  <!-- When no articles exist in database then open this section  -->
+  <div class="not-exist" *ngIf="categories.length === 0">
+    <img src="assets/imgs/sad_face.jpg">
+    <h4>Woo! No Categories Available!</h4>
+    <p>Check Back Later For The Updates</p>
+  </div>
+</ion-content>
+<!-- End Content  -->

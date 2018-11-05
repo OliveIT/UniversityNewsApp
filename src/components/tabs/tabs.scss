@@ -1,0 +1,17 @@
+tabs {
+    background: #fff;
+}
+
+.tab-buttons {
+    > super-tab-button[ng-reflect-selected=true] {
+        background: #000;
+    }
+    > super-tab-button[ng-reflect-selected=false] {
+        background: #464646;
+    }
+}
+.tab-buttons-container {
+    > .indicator {
+        height: 3px !important;
+    }
+}

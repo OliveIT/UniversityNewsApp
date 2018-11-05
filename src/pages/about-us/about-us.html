@@ -1,0 +1,35 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<!-- Header  -->
+<ion-header no-border>
+  <header-one title="About Us"></header-one>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Content  -->
+<ion-content>
+
+  <!-- Title  -->
+  <div class="background">
+    <div class="page-title">
+      <h1>ABOUT US</h1>
+      <p>{{aboutus.title}}</p>
+    </div>
+  </div>
+
+  <!-- Details  -->
+  <div padding class="contents" [innerHTML]="aboutus.details"></div>
+
+  <!-- Not Found  -->
+  <div class="not-exist" *ngIf="!aboutus.title">
+    <img src="assets/imgs/sad_face.jpg">
+    <h4>Woo! No Data Found!</h4>
+    <p>Check Back Later For The Updates</p>
+  </div>
+
+</ion-content>
+<!-- End Content  -->

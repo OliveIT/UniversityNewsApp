@@ -1,0 +1,63 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<!-- Header  -->
+<ion-header no-border>
+  <header-two [title]="category.name"></header-two>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Content  -->
+<ion-content>
+
+  <!-- Article Details  -->
+  <ion-card>
+    <!-- Article Feature Image -->
+    <img [src]="article.image">
+
+    <ion-card-content>
+
+      <!-- Created Date Time -->
+      <ion-item>
+        <ion-icon name="clock" color="color1"></ion-icon>
+        <span> &nbsp; {{ article.timestamp | date }}</span>
+      </ion-item>
+
+      <!-- Article Title -->
+      <ion-card-title text-wrap>
+        <h1>{{article.title}}</h1>
+      </ion-card-title>
+
+      <hr>
+      <br>
+
+      <!-- Article Details -->
+      <p text-justify [innerHTML]="article.details"></p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- List of Related Article  -->
+  <ion-list no-lines *ngIf="relatedArticles && relatedArticles.length">
+    <h2 class="heading" padding-left>Related Articles</h2>
+    <ion-item *ngFor="let article of relatedArticles; let i = index" (tap)="openArticle(article)">
+
+      <!-- Image Of Article -->
+      <ion-thumbnail item-start>
+        <img [src]="article.image">
+      </ion-thumbnail>
+
+      <!-- Title -->
+      <h2 text-wrap>{{article.title}}</h2>
+
+      <!-- Date/Time -->
+      <p>
+        <ion-icon name="clock" color="color1"></ion-icon>
+        <span> &nbsp; {{ article.timestamp | date }}</span>
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<!-- End Content  -->

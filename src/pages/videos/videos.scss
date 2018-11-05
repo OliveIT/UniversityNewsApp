@@ -1,0 +1,30 @@
+page-videos {
+    background: #fff;
+    ion-fab {
+        margin-top: -30px;
+    }
+    ion-card {
+        position: relative;
+    }
+    .duration {
+        position: absolute;
+        top: -1%;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        background: #000;
+        opacity: 0.8;
+        width: 50px;
+        height: 25px;
+        border-radius: 10px;
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+    .not-exist {
+        text-align: center;
+    }
+    .no-more {
+        text-align: center;
+        color: $color1;
+    }
+}

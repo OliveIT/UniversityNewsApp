@@ -1,0 +1,23 @@
+page-popular-news {
+    background: #fff;
+    .item {
+        ion-thumbnail {
+            img {
+                width: 150px;
+                height: 100px;
+                border-radius: 5px;
+                box-shadow: 2px 1px #888888;
+                -webkit-box-shadow: 0px 0px 26px 1px rgba(204, 204, 204, 1);
+                -moz-box-shadow: 0px 0px 26px 1px rgba(204, 204, 204, 1);
+                box-shadow: 0px 0px 26px 1px rgba(204, 204, 204, 1);
+            }
+        }
+    }
+    .not-exist {
+        text-align: center;
+    }
+    .no-more {
+        text-align: center;
+        color: $color1;
+    }
+}

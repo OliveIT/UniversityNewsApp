@@ -1,0 +1,62 @@
+<!-- 
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<!-- Header  -->
+<ion-header no-border>
+  <header-two [title]="category.name"></header-two>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Content  -->
+<ion-content>
+  <ion-card>
+
+    <!-- Youtube Video Proview -->
+    <iframe width="100%" height="250px" [src]="videoLink(videoDetails.youtubeLink) | sanitizer" frameborder="0" allowfullscreen></iframe>
+
+    <!-- Video Details -->
+    <ion-card-content>
+
+      <!-- Date -->
+      <ion-item>
+        <ion-icon name="clock" color="color1"></ion-icon>
+        <span> &nbsp; {{videoDetails.timestamp | date}}</span>
+      </ion-item>
+
+      <!-- Video Title -->
+      <ion-card-title text-wrap>
+        <h1>{{videoDetails.title}}</h1>
+      </ion-card-title>
+
+      <hr>
+      <br>
+
+      <!-- Video Details -->
+      <p text-justify [innerHTML]="videoDetails.details"></p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- List of Related Videos  -->
+  <ion-list no-lines *ngIf="videos && videos.length">
+    <h2 class="heading" padding-left>Related Videos</h2>
+    <ion-item *ngFor="let video of videos; let i = index" (tap)="openVideoDetails(video)">
+
+      <!-- Feature Image -->
+      <ion-thumbnail item-start>
+        <img [src]="video.image">
+      </ion-thumbnail>
+
+      <!-- Video Title -->
+      <h2 text-wrap>{{video.title}}</h2>
+
+      <!-- Date -->
+      <p>
+        <ion-icon name="clock" color="color1"></ion-icon>
+        <span> &nbsp; {{video.timestamp | date}}</span>
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
