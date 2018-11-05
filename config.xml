@@ -35,7 +35,7 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <icon height="57" src="resources/ios/icon/Icon-App.png" width="57" />
+        <!--<icon height="57" src="resources/ios/icon/Icon-App.png" width="57" />
         <icon height="114" src="resources/ios/icon/Icon-App@2x.png" width="114" />
         <icon height="40" src="resources/ios/icon/Icon-App-40x40@1x.png" width="40" />
         <icon height="80" src="resources/ios/icon/Icon-App-40x40@2x.png" width="80" />
@@ -44,8 +44,8 @@
         <icon height="72" src="resources/ios/icon/Icon-App-72x72@1x.png" width="72" />
         <icon height="144" src="resources/ios/icon/Icon-App-72x72@2x.png" width="144" />
         <icon height="76" src="resources/ios/icon/Icon-App-76x76@1x.png" width="76" />
-        <icon height="152" src="resources/ios/icon/Icon-App-76x76@2x.png" width="152" />
-        <!--<icon height="57" src="resources/ios/icon/icon.png" width="57" />
+        <icon height="152" src="resources/ios/icon/Icon-App-76x76@2x.png" width="152" />-->
+        <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
         <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
         <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80" />
@@ -63,7 +63,7 @@
         <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />
         <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />
         <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87" />
-        <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />-->
+        <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />
         <splash height="245" src="resources/ios/splash/landscape.png" width="245" />
         <splash height="490" src="resources/ios/splash/landscape.png" width="666" />
         <splash height="735" src="resources/ios/splash/landscape.png" width="1000" />
